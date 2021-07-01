@@ -4,6 +4,41 @@
   box-sizing: border-box;
 }
 
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: #ffffff;
+  z-index: 99;
+  display: grid;
+  place-items: center;
+  transition: 1s;
+}
+
+.preloader .loader {
+  width: 75px;
+  height: 75px;
+  border: 10px solid pink;
+  border-radius: 50%;
+  border-top-color: #f10b2e;
+  animation: 2s spin infinite linear;
+}
+
+.preloader.done {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 body {
   font-family: sans-serif;
 }
@@ -166,6 +201,9 @@ section {
   align-items: center;
   justify-content: center;
   transition: 0.5s;
+}
+.social__section .scl__itms .itm:hover {
+  transform: scale(1.3);
 }
 .social__section .scl__itms .itm svg {
   fill: #be0f34;
